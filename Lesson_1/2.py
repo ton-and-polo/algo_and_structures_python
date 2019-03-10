@@ -4,10 +4,13 @@
 
 six = 6  # '0000 0110'
 five = 5  # '0000 0101'
+shift = 2
 
 print(
     f'AND: {six & five}\n'  # '0000 0100'
     f'OR: {six | five}\n'  # '0000 0111'
-    f'BIT_SHIFT left: {five << 2}\n'  # '0001 0100'
-    f'BIT_SHIFT right: {five >> 2}\n'  # '0000 0000'
+    f'XOR: {six ^ five}\n'  # '0000 0011'
+    f'NOT: {~five}\n'  # '1111 1010'
+    f'BIT_SHIFT left: {five << shift}\n'  # '0001 0100'
+    f'BIT_SHIFT right: {five >> shift}\n'  # '0000 0000'
 )
