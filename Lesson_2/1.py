@@ -9,3 +9,30 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+
+# Using loop:
+
+operator = ''
+
+while operator != '0':
+    user_input = input('Enter two numbers (5,2): ')
+
+    num_1 = int(user_input.split(',')[0])
+    num_2 = int(user_input.split(',')[1])
+    operator = input('Enter operator: ')
+
+    while operator == '/' and num_2 == 0:
+        num_2 = int(input('You can\'t divide by zero. Enter divider again:\n'))
+
+    if operator == '+':
+        print(num_1 + num_2)
+    elif operator == '-':
+        print(num_1 - num_2)
+    elif operator == '*':
+        print(num_1 * num_2)
+    elif operator == '/':
+        print(num_1 / num_2)
+
+    end_program = input('End: yes/no\n')
+    if end_program == 'yes':
+        operator = '0'
