@@ -10,15 +10,14 @@
 если он ввел 0 в качестве делителя.
 """
 
-# Using loop:
-
 operator = ''
 
-while operator != '0':
-    user_input = input('Enter two numbers (5,2): ')
+# Using loop:
 
-    num_1 = int(user_input.split(',')[0])
-    num_2 = int(user_input.split(',')[1])
+while operator != '0':
+
+    num_1 = int(input('Enter first num: '))
+    num_2 = int(input('Enter first num: '))
     operator = input('Enter operator: ')
 
     while operator == '/' and num_2 == 0:
@@ -33,6 +32,40 @@ while operator != '0':
     elif operator == '/':
         print(num_1 / num_2)
 
-    end_program = input('End: yes/no\n')
-    if end_program == 'yes':
-        operator = '0'
+    end_program = input('End:\nyes - [0]\nno - [1]\n')
+    if end_program == '0':
+        operator = end_program
+        print('End loop calc.')
+
+
+# Using recursion:
+
+
+def calc(operator=''):
+    if operator != '0':
+        num_1 = int(input('Enter first num: '))
+        num_2 = int(input('Enter first num: '))
+
+        operator = input('Enter operator: ')
+
+        if operator == '+':
+            print(num_1 + num_2)
+        elif operator == '-':
+            print(num_1 - num_2)
+        elif operator == '*':
+            print(num_1 * num_2)
+        elif operator == '/':
+            print(num_1 / num_2)
+
+        end_program = input('End:\nyes - [0]\nno - [1]\n')
+
+        if end_program == '0':
+            operator = end_program
+            return calc(operator)
+        else:
+            return calc()
+    else:
+        return 'End recursion calc.'
+
+
+print(calc())
