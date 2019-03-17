@@ -7,4 +7,6 @@
 """
 
 my_list = [8, 3, 15, 6, 4, 2]
-print([my_list.index(i) for i in my_list if i % 2 == 0])
+
+result = [my_list.index(i) for i in my_list if i % 2 == 0]
+print(f'Indexes of even numbers: {result}')
