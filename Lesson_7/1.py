@@ -20,8 +20,13 @@ def bubble_sort(list):
             if list[i] < list[i+1]:
                 list[i+1], list[i] = list[i], list[i + 1]
                 sorted = False
+        if sorted:
+            # Break the loop if there's no swap
+            break
 
     return list
 
 
-print(bubble_sort(my_list))
+# print(bubble_sort(my_list))
+
+print(bubble_sort([9, 8, 1, 6, 5]))
