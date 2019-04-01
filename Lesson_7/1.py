@@ -27,6 +27,4 @@ def bubble_sort(list):
     return list
 
 
-# print(bubble_sort(my_list))
-
-print(bubble_sort([9, 8, 1, 6, 5]))
+print(bubble_sort(my_list))
